@@ -1,0 +1,25 @@
+{
+  "name": "i18n-translator",
+  "description": "",
+  "main": "app://i18n_translator/index.html",
+  "version": "0.0.1",
+  "author": {
+    "name": "Yoeran Luteijn",
+    "email": "contact@yoeran.nl",
+    "url": "http://yoeran.com/"
+  },
+  "window": {
+    "title": "I18n Translator",
+    "width": 900,
+    "height": 800,
+    "min_width": 900,
+    "resizable": true,
+    "frame": true,
+    "toolbar": true
+  },
+  "chromium-args": "--child-clean-exit",
+  "dependencies": {
+    "dot-object": "^1.1.0",
+    "js-yaml": "^3.4.1"
+  }
+}

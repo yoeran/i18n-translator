@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html ng-app="nwApp">
+
+<head>
+    <title>I18n Translator</title>
+    <!-- build:css ./app.css -->
+    <link rel="stylesheet" href="scss/app.scss" />
+    <!-- endbuild -->
+</head>
+
+<body ng-controller="ApplicationCtrl">
+  <input type="file" id="dir-selector" class="hidden" nwdirectory onchange="angular.element(this).scope().changeDirectory(this.value)" />
+
+  <header>
+    <div>
+      <label for="yaml-id">Select file</label>
+      <select ng-change="loadYaml()" ng-model="selectedYaml" id="yaml-id">
+        <option ng-repeat="yaml in yamlIndex" value="{{ yaml.id }}">{{ yaml.id }}</option>
+      </select>
+    </div>
+
+    <div>
+      {{ selectedYaml }}
+    </div>
+
+    <div>
+      XX empty fields
+    </div>
+
+  </header>
+
+  <main>
+    <text-group data="data" title="title" ng-repeat="(title,data) in yamlDocument"></text-group>
+  </main>
+
+  <!-- build:js ./lib.js -->
+  <script src="./../bower_components/angular/angular.js"></script>
+  <script src="./../bower_components/angular-sanitize/angular-sanitize.js"></script>
+  <script src="./../bower_components/underscore/underscore.js"></script>
+  <!-- endbuild -->
+
+  <!-- build:js1 ./app.js -->
+  <script src="scripts/vendor/dotize.js"></script>
+  <script src="scripts/core.js"></script>
+  <script src="scripts/gui.nav.js"></script>
+  <script src="scripts/main.js"></script>
+  <script src="scripts/controllers/ApplicationCtrl.js"></script>
+  <script src="scripts/directives/text-group.js"></script>
+  <!-- endbuild -->
+</body>
+</html>
