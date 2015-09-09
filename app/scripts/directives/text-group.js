@@ -20,5 +20,5 @@ angular.module('nwApp').directive('textGroup', function() {
         return title.join('.');
       };
     }
-  }
+  };
 });

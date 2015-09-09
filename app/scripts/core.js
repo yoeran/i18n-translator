@@ -1,7 +1,7 @@
 var path  = require('path');
 var fs    = require('fs');
 var YAML  = require('js-yaml');
-var dot   = require('dot-object');
+// var dot   = require('dot-object');
 
 var core = {
   buildYamlIndex: function(dir) {
@@ -46,7 +46,7 @@ var core = {
       } else if ( filter.test(filename) ) {
         callback( filename );
       }
-    };
+    }
   },
 
   buildYamlDocument: function (files) {

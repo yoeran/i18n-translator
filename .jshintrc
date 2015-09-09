@@ -19,6 +19,8 @@
   "smarttabs": true,
   "jquery": false,
   "globals": {
-    "angular": true
+    "angular": true,
+    "_": true,
+    "dotize": true
   }
 }

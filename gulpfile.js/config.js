@@ -20,10 +20,10 @@ module.exports = {
   nodewebkit: {
     global: {
       files: tmp+'/**/**',
-      macIcns: './icon.icns',
+      // macIcns: './icon.icns',
       macPlist: {
-        CFBundleName: 'i18n_translator',
-        CFBundleDisplayName: 'i18n_translator',
+        CFBundleName: 'I18n Translator',
+        CFBundleDisplayName: 'I18n Translator',
         CFBundleIdentifier: 'com.yoeran.i18n_translator',
         CFBundleDevelopmentRegion: 'nl'
       },
