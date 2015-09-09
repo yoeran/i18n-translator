@@ -7,7 +7,6 @@ Current version: 0.0.1
 Used [nw-template](https://github.com/yoeran/nw-template) to build this app.
 
 ## Todo's
-* Save edits (pretty important...)
 * Improve UI
 * Add logo
 * Add translation helper (Google Translate plugin?)

@@ -1,4 +1,4 @@
 <div class="text-node">
   <div class="text-node__label">{{ title }}</div>
-  <textarea>{{ data }}</textarea>
+  <textarea ng-change="updateDocument(title, ref, data)" ng-model="data"></textarea>
 </div>

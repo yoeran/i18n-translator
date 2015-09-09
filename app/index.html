@@ -1,14 +1,14 @@
 <!DOCTYPE html>
-<html ng-app="nwApp">
+<html ng-app="nwApp" ng-controller="ApplicationCtrl">
 
 <head>
-    <title>I18n Translator</title>
+    <title>I18n Translator {{ isDirty | editedFilter }}</title>
     <!-- build:css ./app.css -->
     <link rel="stylesheet" href="scss/app.scss" />
     <!-- endbuild -->
 </head>
 
-<body ng-controller="ApplicationCtrl">
+<body>
   <input type="file" id="dir-selector" class="hidden" nwdirectory onchange="angular.element(this).scope().changeDirectory(this.value)" />
 
   <header>
@@ -24,13 +24,15 @@
     </div>
 
     <div>
-      XX empty fields
+      {{ emptyFields }} empty fields
     </div>
+
+    <button id="save-button" ng-click="saveWork()">Save</button>
 
   </header>
 
   <main>
-    <text-group data="data" title="title" ng-repeat="(title,data) in yamlDocument"></text-group>
+    <text-group data="data" title="title" doc="yamlDocument.data" ng-repeat="(title,data) in yamlDocument.data"></text-group>
   </main>
 
   <!-- build:js ./lib.js -->
@@ -46,6 +48,7 @@
   <script src="scripts/main.js"></script>
   <script src="scripts/controllers/ApplicationCtrl.js"></script>
   <script src="scripts/directives/text-group.js"></script>
+  <script src="scripts/filters/edited.js"></script>
   <!-- endbuild -->
 </body>
 </html>

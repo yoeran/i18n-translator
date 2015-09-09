@@ -19,7 +19,7 @@ menuItems.append(new gui.MenuItem({
 menuItems.append(new gui.MenuItem({
   label: 'Save',
   click: function () {
-    window.alert('Implement save method');
+    document.getElementById('save-button').click();
   },
   key: 's',
   modifiers: actionKey

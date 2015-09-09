@@ -1,7 +1,7 @@
 var path  = require('path');
 var fs    = require('fs');
 var YAML  = require('js-yaml');
-// var dot   = require('dot-object');
+var dot   = require('dot-object');
 
 var core = {
   buildYamlIndex: function(dir) {
@@ -74,12 +74,31 @@ var core = {
   readYaml: function ( filePath ) {
     var doc = {};
     try {
-      doc = YAML.safeLoad( fs.readFileSync( filePath , 'utf8') );
+      doc = YAML.safeLoad( fs.readFileSync( filePath, 'utf8' ) );
     } catch (err) {
       console.log(err);
     }
 
     return doc;
+  },
+
+  saveYaml: function ( yaml ) {
+    for ( var fi in yaml.files ) {
+      var file    = yaml.files[ fi ],
+          locale  = file.locale;
+
+      var data = _.clone(yaml.data);
+      _.each(data, function(d, key){
+        data[key] = d[ locale ];
+      });
+
+      dot.object(data);
+      var toYaml = {};
+      toYaml[ locale ] = data;
+
+      var yamlData = YAML.safeDump( toYaml );
+      fs.writeFile( file.path, yamlData, 'utf8' );
+    }
   }
 
 };

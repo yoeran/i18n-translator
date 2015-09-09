@@ -3,7 +3,9 @@ angular.module('nwApp').directive('textGroup', function() {
     restrict: 'E',
     scope: {
       title: '=',
-      data: '='
+      data: '=',
+      ref: '=',
+      doc: '='
     },
     transclude: true,
     template: '<div ng-include="contentUrl()"></div>',
@@ -18,6 +20,10 @@ angular.module('nwApp').directive('textGroup', function() {
         l = '<span>'+l+'</span>';
         title.push(l);
         return title.join('.');
+      };
+
+      scope.updateDocument = function (locale, ref, value) {
+        scope.doc[ ref ][ locale ] = value;
       };
     }
   };
