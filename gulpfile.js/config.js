@@ -30,7 +30,7 @@ module.exports = {
       version: '0.12.2'
     },
     dist: {
-      platforms: ['osx64', 'win32'],
+      platforms: ['win','osx','linux'],
       buildType: 'versioned',
       macZip: true
     },

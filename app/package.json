@@ -2,7 +2,7 @@
   "name": "i18n-translator",
   "description": "",
   "main": "app://i18n_translator/index.html",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "author": {
     "name": "Yoeran Luteijn",
     "email": "contact@yoeran.nl",
